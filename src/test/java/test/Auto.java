@@ -10,7 +10,7 @@ public class Auto {
     static int cantidadCreados;
     
 
-    public int cantidadAsientos() {
+    int cantidadAsientos() {
         int cantidad = 0;
         for (Asiento asiento : asientos) {
             if (asiento != null) {
@@ -20,7 +20,7 @@ public class Auto {
         return cantidad;
     }
 
-    public String verificarIntegridad() {
+    String verificarIntegridad() {
         if (this.registro != motor.registro) {
             return "Las piezas no son originales";
         }
