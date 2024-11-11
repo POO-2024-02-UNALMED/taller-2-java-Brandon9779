@@ -1,17 +1,18 @@
 package test;
 
-import java.util.ArrayList;
-
 public class Auto {
+    static int cantidadCreados;
+
+
     String modelo;
     int precio;
-    ArrayList<Asiento> asientos; 
+    Asiento[] asientos;
     String marca;
     Motor motor;
     int registro;
-    static int cantidadCreados;
+    
 
-    public int cantidadAsientos() {
+    int cantidadAsientos() {
         int cantidad = 0;
         for (Asiento asiento : asientos) {
             if (asiento != null) {
@@ -21,8 +22,7 @@ public class Auto {
         return cantidad;
     }
 
-
-    public String verificarIntegridad() {
+    String verificarIntegridad() {
         if (this.registro != motor.registro) {
             return "Las piezas no son originales";
         }
@@ -32,5 +32,13 @@ public class Auto {
             }
         }
         return "Auto original";
+    }
+
+    static void incrementarCantidadCreados() {
+        cantidadCreados++;
+    }
+
+    static int obtenerCantidadCreados() {
+        return cantidadCreados;
     }
 }
